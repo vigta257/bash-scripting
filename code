@@ -9,3 +9,17 @@ echo "Welcome, $name!"
 
 # Display the current date and time
 echo "Current date and time: $(date)"
+
+
+# Set threshold percentage
+THRESHOLD=80
+
+# Get current disk usage
+USAGE=$(df -h | grep '/$' | awk '{print $5}' | sed 's/%//')
+
+# Check if usage is above the threshold
+if [ $USAGE -gt $THRESHOLD ]; then
+    echo "Warning: Disk space usage is at ${USAGE}%"
+else
+    echo "Disk space usage is within the safe limit (${USAGE}%)"
+fi
