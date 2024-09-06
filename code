@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Collect the username from the login user
+echo -n "Enter your name: "
+read name
+
+# Welcome the user
+echo "Welcome, $name!"
+
+# Display the current date and time
+echo "Current date and time: $(date)"
